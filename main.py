@@ -1,10 +1,7 @@
-from fastapi import FastAPI
-from database import Base, engine
-from routes import users, assignments, submissions
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi.requests import Request
+from fastapi.responses import HTMLResponse
 
-Base.metadata.create_all(bind=engine)
-
-app = FastAPI()
-app.include_router(users.router)
-app.include_router(assignments.router)
-app.include_router(submissions.router)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
