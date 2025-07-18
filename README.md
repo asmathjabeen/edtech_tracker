@@ -1,57 +1,55 @@
-# EDTECH-ASSIGNMENT-TRACKER
-Design and implement a simplified assignment tracking system for an EdTech platform that allows teachers to post assignments and students to submit them.
-Part A: System Design (Written)
+# 🎓 EdTech Assignment Tracker
 
-• Design the system architecture and document:
+A simple assignment tracking system built with **FastAPI** that allows **teachers** to post assignments and **students** to submit them — with file upload support, role-based authentication, and a clean UI.
 
- • Core entities and their relationships (ER diagram or table descriptions)
+---
 
- • API endpoints for the following actions:
+## 🔧 Features
 
- • Teacher creates an  assignment
+- 🧑‍🏫 **Teacher Role**:  
+  - Create assignments  
+  - View student submissions
 
- • Student submits assignment
+- 🎓 **Student Role**:  
+  - Submit assignments (with file upload support)
 
- • Teacher views submissions
+- 🔐 **Authentication**: JWT-based login and signup system
 
- • Authentication strategy (student vs. teacher roles)
+- 📁 **File Uploads**: Store and manage submissions with file handling
 
- • Suggestions for scaling the system in the future
+- 🖼️ **Frontend**: Minimal HTML interface to create/submit/view assignments
 
-Part B: Prototype Implementation
+- 📜 **Swagger Docs**: Auto-generated at `/docs`
 
-• Implement at least the following APIs:
+---
 
- • User signup/login (role-based: teacher/student)
+## 🛠️ Tech Stack
 
- • Create assignment (teacher only)
+- FastAPI (Backend)
+- SQLite (Database)
+- HTML/CSS (Frontend)
+- JWT (Authentication)
+- Uvicorn (Server)
 
- • Submit assignment (student only)
+---
 
- • View submissions (teacher only)
+## 🚀 How to Run Locally
 
-• Technology stack:
+> 🧙‍♂️ Requires Python 3.9+ installed
 
- • Use Python with Django, Flask, or FastAPI
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-username/edtech_tracker.git
+cd edtech_tracker
 
- • Store data in SQLite or PostgreSQL
+# 2. Set up virtual environment
+python -m venv venv
+venv\Scripts\activate     # For Windows
+# or
+source venv/bin/activate  # For Linux/Mac
 
- • Return structured JSON responses
+# 3. Install dependencies
+pip install -r requirements.txt
 
-Frontend (Mandatory)
-
-• Basic UI with either plain HTML/CSS/JS or React:
-
- • Simple form for assignment creation (teacher)
-
- • Submit assignment page (student)
-
- • View submissions page (teacher)
-
-Bonus
-
-• Improve the UI (styling, layout, UX)
-
- • Add file upload support for submissions
-
- • Include Swagger/OpenAPI documentation
+# 4. Run the app
+uvicorn main:app --reload
